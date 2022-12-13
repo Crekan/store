@@ -1,0 +1,14 @@
+[
+  {
+    "model": "products.product",
+    "pk": 1,
+    "fields": {
+      "name": "test name product",
+      "description": "test description product",
+      "price": "12.00",
+      "quantity": 12,
+      "image": "products_images/ba43a8bf5b491168b4f74e9922c88c25.jpg",
+      "category": 1
+    }
+  }
+]
