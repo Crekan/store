@@ -25,6 +25,7 @@ SECRET_KEY = 'django-insecure-rm8ni-xga_di-4$et&x@c$mn@ck_*xr-m+=r!gux_zx5a9k8l-
 DEBUG = True
 
 ALLOWED_HOSTS = []
+DOMAIN_NAME = 'http://127.0.0.1:8000'
 
 # Application definition
 
@@ -133,4 +134,8 @@ LOGIN_URL = '/users/login/'
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_HOST = 'smtp.yandex.ru'
+EMAIL_PORT = 465
+EMAIL_HOST_USER = 'kazeko.vania@yandex.ru'
+EMAIL_HOST_PASSWORD = '12345678178vaniaA@'
+EMAIL_USE_SSL = True
