@@ -36,6 +36,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
+
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.github',
 
     'products.apps.ProductsConfig',
     'users.apps.UsersConfig',
@@ -133,12 +139,34 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # Users
 
 AUTH_USER_MODEL = 'users.User'
+
+# Redirect
+
 LOGIN_URL = '/users/login/'
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
+
+# Email
 
 EMAIL_HOST = 'smtp.yandex.ru'
 EMAIL_PORT = 465
 EMAIL_HOST_USER = 'kazeko.vania@yandex.ru'
 EMAIL_HOST_PASSWORD = '12345678178vaniaA@'
 EMAIL_USE_SSL = True
+
+# OAuth
+
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend',
+]
+
+SITE_ID = 1
+
+SOCIALACCOUNT_PROVIDERS = {
+    'github': {
+        'SCOPE': [
+            'user',
+        ],
+    }
+}
